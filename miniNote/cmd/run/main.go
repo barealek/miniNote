@@ -62,6 +62,7 @@ func buildMiniNote() (*chi.Mux, func(), error) {
 
 	app := chi.NewRouter()
 	app.Use(middleware.Logger)
+	app.Use(middleware.Recoverer)
 
 	controllers.RegisterControllers(app)
 
